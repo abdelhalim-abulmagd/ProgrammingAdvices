@@ -20,8 +20,8 @@ enum EnMainMenu { Show = 1, Add = 2, Delete = 3, Update = 4, Find = 5, Transacti
 enum EnTransactionMenu { Deposit = 1, Withdraw = 2, TotalBalance = 3, MainMenu = 4, };
 enum EnManageUsersMenu { eListUsers = 1, eAdd = 2, eDelete = 3, eUpdate = 4, eFind = 5, eMainMenu = 6 };
 
-enum EnPermissios { eAllPermissios = -1, eShowClintList = 1, eAddNewClint = 2, eDeleteClint = 4, eUpdateClint = 8, eFindClint = 16,
-					eTransaction = 32, eManageUsers = 64 };
+enum EnPermissios { eAllPermissios = -1, eShowClintList = 1, eAddNewClint = 2, eDeleteClint = 3, eUpdateClint = 4, eFindClint = 5,
+					eTransaction = 6, eManageUsers = 7 };
 
 struct StUiSettings
 {
