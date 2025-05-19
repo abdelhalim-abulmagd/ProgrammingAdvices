@@ -10,6 +10,8 @@ using namespace std;
 void BackToMainMenu();
 void BackToTransactionsMenu();
 void BackToMangageUsersMenu();
+void LoginScreen();
+void MainMenuScreen();
 
 const string ClintsDataFilePath = "Clints.txt";
 const string UsersDataFilePath = "Users.txt";
@@ -20,8 +22,11 @@ enum EnMainMenu { Show = 1, Add = 2, Delete = 3, Update = 4, Find = 5, Transacti
 enum EnTransactionMenu { Deposit = 1, Withdraw = 2, TotalBalance = 3, MainMenu = 4, };
 enum EnManageUsersMenu { eListUsers = 1, eAdd = 2, eDelete = 3, eUpdate = 4, eFind = 5, eMainMenu = 6 };
 
-enum EnPermissios { eAllPermissios = -1, eShowClintList = 1, eAddNewClint = 2, eDeleteClint = 3, eUpdateClint = 4, eFindClint = 5,
-					eTransaction = 6, eManageUsers = 7 };
+enum EnPermissios { eAllPermissios = -1, eShowClintList = 1, eAddNewClint = 2, eDeleteClint = 4, eUpdateClint = 8, eFindClint = 16,
+					eTransaction = 32, eManageUsers = 64 };
+
+
+short Permissions = 0;
 
 struct StUiSettings
 {
@@ -773,32 +778,32 @@ void ListUsersScreen()
 
 int ReadPermission()
 {
-	int Permissios = 0;
+	short Permissios = 0;
 
 	if (YesNoQuestion("Give Him Full Accsess [Y, n]: ") == Yes)
 		return eAllPermissios;
 
 
 	if (YesNoQuestion("Give Him Accsess On > Show Clint List < [Y, n]: ") == Yes)
-		Permissios += eShowClintList;
+		Permissios = Permissios | eShowClintList;
 
 	if (YesNoQuestion("Give Him Accsess On > Add New Clint < [Y, n]: ") == Yes)
-		Permissios += eAddNewClint;
+		Permissios = Permissios | eAddNewClint;
 
 	if (YesNoQuestion("Give Him Accsess On > Delete Clint < [Y, n]: ") == Yes)
-		Permissios += eDeleteClint;
+		Permissios = Permissios | eDeleteClint;
 
 	if (YesNoQuestion("Give Him Accsess On > Update Clint < [Y, n]: ") == Yes)
-		Permissios += eUpdateClint;
+		Permissios = Permissios | eUpdateClint;
 
 	if (YesNoQuestion("Give Him Accsess On > Find Clint < [Y, n]: ") == Yes)
-		Permissios += eFindClint;
+		Permissios = Permissios | eFindClint;
 
 	if (YesNoQuestion("Give Him Accsess On > Transactions < [Y, n]: ") == Yes)
-		Permissios += eTransaction;
+		Permissios = Permissios | eTransaction;
 
 	if (YesNoQuestion("Give Him Accsess On > Manage Users < [Y, n]: ") == Yes)
-		Permissios += eManageUsers;
+		Permissios = Permissios | eManageUsers;
 
 	return Permissios;
 
@@ -1142,15 +1147,48 @@ void ClintsListScreen()
 
 }
 
+bool HasPermission(EnMainMenu Choice)
+{
+
+	switch (Choice)
+	{
+	case Show:
+		return (Permissions & eShowClintList) == eShowClintList;
+	case Add:
+		return (Permissions & eAddNewClint) == eAddNewClint;
+	case Delete:
+		return (Permissions & eDeleteClint) == eDeleteClint;
+	case Update:
+		return (Permissions & eUpdateClint) == eUpdateClint;
+	case Find:
+		return (Permissions & eFindClint) == eFindClint;
+	case Transaction:
+		return (Permissions & eTransaction) == eTransaction;
+	case ManageUsers:
+		return (Permissions & eManageUsers) == eManageUsers;
+	default :
+		return true;
+	}
+}
+
 
 
 void PerformMainMenuChoice(EnMainMenu Choice)
 {
 	system("cls");
 
+	if (!HasPermission(Choice))
+	{
+		cout << "You Dont Have Permission \nEnter Any Key To Back To Main Menu...";
+		system("pause>0");
+		MainMenuScreen();
+
+	}
+
 	switch (Choice)
 	{
 	case Show:
+
 		ClintsList();
 		break;
 
@@ -1179,7 +1217,8 @@ void PerformMainMenuChoice(EnMainMenu Choice)
 		break;
 
 	case Logout:
-		return;
+		LoginScreen();
+		break;
 	}
 
 	BackToMainMenu();
@@ -1189,6 +1228,7 @@ void PerformMainMenuChoice(EnMainMenu Choice)
 void MainMenuScreen()
 {
 
+	system("cls");
 	vector<string> Choices
 	{
 		"Show Clint List",
@@ -1214,15 +1254,67 @@ void BackToMainMenu()
 	cout << "Enter Any Key To Back To Main Menu...";
 	system("pause>0");
 
-	system("cls");
+	//system("cls");
 	MainMenuScreen();
 
 }
 
 
+bool IsUserNameAndPasswordRight(string UserName, string Password, vector<StUser> vData)
+{
+
+	for (StUser Data : vData)
+	{
+		if (Data.UserName == UserName && Data.Password == Password)
+			return true;
+	}
+	return false;
+
+}
+
+
+string LoginLogic(vector<StUser> vData)
+{
+	string UserName;
+	string Password;
+
+	bool LoginSuccess = false ;
+
+	do
+	{
+		UserName = ReadString("Enter User Name : ");
+		Password = ReadString("Enter Password : ");
+
+		LoginSuccess = IsUserNameAndPasswordRight(UserName,Password, vData);
+
+		if (!LoginSuccess)
+			cout << "Wrong User Name Or Password\n";
+
+	} while (!LoginSuccess);
+
+	return UserName;
+}
+
+
+
+void LoginScreen()
+{
+	system("cls");
+	StUiSettings UiSettings;
+	PrintHeader("\t\t L O G I N", UiSettings.LineWidth);
+
+	vector<StUser> vData = ReadUsersFile(UsersDataFilePath);
+	
+	string UserName = LoginLogic(vData);
+	StUser Data = GetUser(UserName, vData);
+	Permissions = Data.Permissions;
+	MainMenuScreen();
+}
+// 0001
+// 0010
 int main()
 {
-	MainMenuScreen();
+	LoginScreen();
 }
 
 
