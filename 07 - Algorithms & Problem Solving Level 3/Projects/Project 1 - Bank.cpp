@@ -8,7 +8,7 @@ using namespace std;
 
 void MainMenuScreen();
 
-const string ClintsDataFilePath = "Data.txt";
+const string ClintsDataFilePath = "Clints.txt";
 
 enum EnAnwer { No, Yes };
 enum EnStatus { Fail, Success };
