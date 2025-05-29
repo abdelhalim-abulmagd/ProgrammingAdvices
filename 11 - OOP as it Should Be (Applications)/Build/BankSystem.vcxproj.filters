@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\Global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsDate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsPerson.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsUser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsClint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsLoginScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsClintMainScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsUpdateClintScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsAddClintScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsDeleteClintScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsListClintScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsLogScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsTransactionMenuScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsDepositScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsWithdrawScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsManageUsersScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsListUserScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsAddUserScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsDeleteUserScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsUpdateUserScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\Global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsDate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsPerson.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsUser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsClint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsLoginScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsClintMainScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsUpdateClintScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsAddClintScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsDeleteClintScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsListClintScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsLogScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsTransactionMenuScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsDepositScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsWithdrawScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsManageUsersScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsListUserScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsAddUserScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsDeleteUserScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsUpdateUserScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{A78DB2F1-BC96-3DA9-993D-61FD3AB29B4E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2776DF9F-34AB-3522-BF31-75B509FE0F94}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

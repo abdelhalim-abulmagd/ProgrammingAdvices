@@ -1,0 +1,10 @@
+^D:\STUDY\PROGRAMMINGADVICES\11 - OOP AS IT SHOULD BE (APPLICATIONS)\BUILD\CMAKEFILES\358FB89129B7BBDE91C63EB8655FABDB\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/study/ProgrammingAdvices/11 - OOP as it Should Be (Applications)" "-BD:/study/ProgrammingAdvices/11 - OOP as it Should Be (Applications)/Build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "D:/study/ProgrammingAdvices/11 - OOP as it Should Be (Applications)/Build/BankSystem.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,10 @@
+^D:\STUDY\PROGRAMMINGADVICES\11 - OOP AS IT SHOULD BE (APPLICATIONS)\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/study/ProgrammingAdvices/11 - OOP as it Should Be (Applications)" "-BD:/study/ProgrammingAdvices/11 - OOP as it Should Be (Applications)/Build" --check-stamp-file "D:/study/ProgrammingAdvices/11 - OOP as it Should Be (Applications)/Build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
