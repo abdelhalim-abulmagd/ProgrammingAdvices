@@ -28,6 +28,12 @@ public:
 	static string ToLower(string String);
 	void ToLower();
 
+	static string Encrypt(string Text, short Key = 2);
+	void Encrypt(short Key = 2);
+
+	static string Decript(string Text, short Key = 2);
+	void Decript(short Key = 2);
+
 private:
 	string String;
 };

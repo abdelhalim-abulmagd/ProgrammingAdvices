@@ -33,7 +33,7 @@ void clsScreen::PrintClintInfo( clsClint& Clint)
 	cout << "|" << setw(10) << Clint.GetPhone();
 	cout << "|" << setw(12) << Clint.GetAcountNumber();
 	cout << "|" << setw(8) << Clint.GetPinCode();
-	cout << "|" << setw(10) << Clint.GetSalary() << '\n';
+	cout << "|" << setw(10) << Clint.GetCurrentBalance() << '\n';
 }
 
 void clsScreen::PrintUserInfo(clsUser& User)
@@ -46,6 +46,26 @@ void clsScreen::PrintUserInfo(clsUser& User)
 	cout << "|" << setw(12) << User.GetUserName();
 	cout << "|" << setw(8) << User.GetPassword();
 	cout << "|" << setw(10) << User.GetPermissions() << '\n';
+}
+
+void clsScreen::PrintCurrencyLable()
+{
+	cout << left;
+
+	cout << "|" << setw(30) << "Country";
+	cout << "|" << setw(5) << "Code";
+	cout << "|" << setw(35) << "Currency Name";
+	cout << "|" << setw(5) << "Rate" << '\n';
+}
+
+void clsScreen::PrintCurrencyInfo(clsCurrency& Currency)
+{
+	cout << left;
+
+	cout << "|" << setw(30) << Currency.GetCountry();
+	cout << "|" << setw(5) << Currency.GetCode();
+	cout << "|" << setw(35) << Currency.GetCurrencyName();
+	cout << "|" << setw(5) << Currency.GetRate() << '\n';
 }
 
 void clsScreen::PrintStaus(clsClint::EnStatus Status)
@@ -106,6 +126,34 @@ void clsScreen::PrintStaus(clsUser::EnStatus Status)
 	}
 }
 
+
+void clsScreen::PrintStaus(clsCurrency::EnStatus Status)
+{
+	switch (Status)
+	{
+	case clsCurrency::CurrencyNotExist:
+		cout << "Failed : Currency Not Found On Data File\n";
+		break;
+
+	case clsCurrency::CurrencyExist:
+		cout << "Info : Currency Exist On Data File\n";
+		break;
+
+	case clsCurrency::DataFileFound:
+		cout << "Info : Data File Found \n";
+		break;
+
+	case clsCurrency::DataFileNotFound:
+		cout << "Failed : Data File Not Found \n";
+		break;
+
+	case clsCurrency::Success:
+		cout << "Success : New Updated Data Saved To File Successfully\n";
+		break;
+
+	}
+}
+
 clsScreen::EnAnwer clsScreen::YesNoQuestion(string Msg)
 {
 	string DefultMsg = "Are You Sure? [Y, n] : ";
@@ -135,7 +183,7 @@ void clsScreen::ClintInfoLable()
 	cout << "|" << setw(10) << "Phone";
 	cout << "|" << setw(12) << "AcountNumber";
 	cout << "|" << setw(8) << "PinCode";
-	cout << "|" << setw(10) << "Salary" << '\n';
+	cout << "|" << setw(10) << "Balance" << '\n';
 }
 
 void clsScreen::UserInfoLable()

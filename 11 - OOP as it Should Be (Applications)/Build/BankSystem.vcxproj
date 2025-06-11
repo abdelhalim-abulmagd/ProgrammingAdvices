@@ -343,6 +343,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsUser.cpp" />
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsClint.h" />
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsClint.cpp" />
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsCurrency.h" />
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsCurrency.cpp" />
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsScreen.h" />
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsScreen.cpp" />
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsLoginScreen.h" />
@@ -359,12 +361,18 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsListClintScreen.cpp" />
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsLogScreen.h" />
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsLogScreen.cpp" />
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsCurrencyExchangeScreen.h" />
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsCurrencyExchangeScreen.cpp" />
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsTransactionMenuScreen.h" />
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsTransactionMenuScreen.cpp" />
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsDepositScreen.h" />
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsDepositScreen.cpp" />
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsWithdrawScreen.h" />
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsWithdrawScreen.cpp" />
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsTransferScreen.h" />
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsTransferScreen.cpp" />
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsTransferLogScreen.h" />
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsTransferLogScreen.cpp" />
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsManageUsersScreen.h" />
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsManageUsersScreen.cpp" />
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsListUserScreen.h" />
@@ -375,6 +383,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsDeleteUserScreen.cpp" />
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsUpdateUserScreen.h" />
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsUpdateUserScreen.cpp" />
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsListCurrenciesScreen.h" />
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsListCurrenciesScreen.cpp" />
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsFindCurrencyScreen.h" />
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsFindCurrencyScreen.cpp" />
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsUpdateCurrencyRateScreen.h" />
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsUpdateCurrencyRateScreen.cpp" />
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsCurrencyCalculatorScreen.h" />
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsCurrencyCalculatorScreen.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

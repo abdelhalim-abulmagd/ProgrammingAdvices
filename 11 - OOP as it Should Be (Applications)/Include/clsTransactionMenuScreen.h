@@ -12,7 +12,7 @@ public:
 
 
 private:
-	enum EnMenuChoices { Deposit = 1, Withdraw,  MainMenu };
+	enum EnMenuChoices { Deposit = 1, Withdraw, Transfer, TransferLog, MainMenu};
 
 	static void PerformMenuChoice(EnMenuChoices Choice);
 

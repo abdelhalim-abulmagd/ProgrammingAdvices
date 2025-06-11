@@ -1,6 +1,7 @@
 #pragma once
 
 #include "clsClint.h"
+#include "clsCurrency.h"
 #include "clsUser.h"
 
 
@@ -23,9 +24,15 @@ public:
 
 	static void PrintUserInfo(clsUser& User);
 
+	static void PrintCurrencyLable();
+
+	static void PrintCurrencyInfo(clsCurrency& Currency);
+
 	static void PrintStaus(clsClint::EnStatus Status);
 
 	static void PrintStaus(clsUser::EnStatus Status);
+
+	static void PrintStaus(clsCurrency::EnStatus Status);
 
 	static EnAnwer YesNoQuestion(string Msg = "");
 

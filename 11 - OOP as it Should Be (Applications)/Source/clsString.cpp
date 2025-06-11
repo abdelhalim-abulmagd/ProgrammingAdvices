@@ -147,6 +147,26 @@ string clsString::ToLower(string String)
     return String;
 }
 
+string clsString::Encrypt(string Text, short Key)
+{
+    for (size_t i = 0; i < Text.length(); i++)
+    {
+        Text[i] = Text[i] + Key;
+    }
+    return Text;
+}
+
+string clsString::Decript(string Text, short Key)
+{
+    for (size_t i = 0; i < Text.length(); i++)
+    {
+        Text[i] = Text[i] - Key;
+    }
+    return Text;
+}
+
+
+
 //----------------------------
 // Public Methods
 //----------------------------
@@ -169,4 +189,14 @@ void clsString::Replace(string WordToReplace, string ReplaceTo, bool MatchCase)
 void clsString::ToLower()
 {
     String = ToLower(String);
+}
+
+void clsString::Encrypt(short Key)
+{
+    String = Encrypt(String, Key);
+}
+
+void clsString::Decript(short Key)
+{
+    String = Decript(String, Key);
 }

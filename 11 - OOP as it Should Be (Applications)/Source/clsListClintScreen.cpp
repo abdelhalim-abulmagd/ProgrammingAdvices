@@ -56,7 +56,7 @@ void clsListClintScreen::PrintListClint( vector<clsClint>& vClints)
 	for ( clsClint& Clint : vClints)
 	{
 		clsScreen::PrintClintInfo(Clint);
-		TotalBalance += Clint.GetSalary();
+		TotalBalance += Clint.GetCurrentBalance();
 	}
 	clsScreen::Line(80);
 

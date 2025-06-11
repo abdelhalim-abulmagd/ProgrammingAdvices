@@ -2,6 +2,8 @@
 
 #include "clsDepositScreen.h"
 #include "clsWithdrawScreen.h"
+#include "clsTransferScreen.h"
+#include "clsTransferLogScreen.h"
 
 #include "clsInput.h"
 clsTransactionMenuScreen::clsTransactionMenuScreen() {}
@@ -25,6 +27,8 @@ void clsTransactionMenuScreen::Show()
 	{
 		"Deposit",
 		"Withdraw",
+		"Transfer",
+		"Tranfer Log",
 		"Main Menu"
 	};
 
@@ -32,7 +36,7 @@ void clsTransactionMenuScreen::Show()
 
 	clsScreen::Line(55);
 
-	EnMenuChoices Choice = static_cast<EnMenuChoices>(clsInput::ReadNumber("Chose From [1, 3] : ", 1, 3));
+	EnMenuChoices Choice = static_cast<EnMenuChoices>(clsInput::ReadNumber("Chose From [1, 5] : ", 1, 5));
 
 	PerformMenuChoice(Choice);
 }
@@ -54,6 +58,13 @@ void clsTransactionMenuScreen::PerformMenuChoice(EnMenuChoices Choice)
 	case Withdraw:
 		clsWithdrawScreen::Show();
 		break;
+	case Transfer:
+		clsTransferScreen::Show();
+		break;
+	case TransferLog:
+		clsTransferLogScreen::Show();
+		break;
+
 	case MainMenu:
 		return;
 	}
@@ -63,7 +74,7 @@ void clsTransactionMenuScreen::PerformMenuChoice(EnMenuChoices Choice)
 
 void clsTransactionMenuScreen::BackToMainScreen()
 {
-	cout << "Enter Any Key To Back To Main Menu Screen...";
+	cout << "Enter Any Key To Back To Transaction Menu Screen...";
 	system("pause>0");
 	Show();
 

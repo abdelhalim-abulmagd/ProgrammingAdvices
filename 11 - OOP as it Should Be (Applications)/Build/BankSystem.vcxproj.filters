@@ -25,6 +25,9 @@
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsClint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsCurrency.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -49,6 +52,9 @@
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsLogScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsCurrencyExchangeScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsTransactionMenuScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -56,6 +62,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsWithdrawScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsTransferScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsTransferLogScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsManageUsersScreen.cpp">
@@ -71,6 +83,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsUpdateUserScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsListCurrenciesScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsFindCurrencyScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsUpdateCurrencyRateScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsCurrencyCalculatorScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -94,6 +118,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsClint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsCurrency.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsScreen.h">
@@ -120,6 +147,9 @@
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsLogScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsCurrencyExchangeScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsTransactionMenuScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -127,6 +157,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsWithdrawScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsTransferScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsTransferLogScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsManageUsersScreen.h">
@@ -142,6 +178,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsUpdateUserScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsListCurrenciesScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsFindCurrencyScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsUpdateCurrencyRateScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Include\clsCurrencyCalculatorScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

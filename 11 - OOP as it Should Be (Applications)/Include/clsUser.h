@@ -1,4 +1,5 @@
 #pragma once
+#include "clsClint.h"
 
 #include "clsPerson.h"
 #include <vector>
@@ -16,6 +17,22 @@ public:
 		string UserName;
 		string Password;
 		int Permissions;
+	};
+
+	struct StTransferLog
+	{
+		string Date;
+
+		string User;
+		float Amount;
+
+		string SourceAccount;
+		float SourceBalanceBefore;
+		float SourceBalanceAfter;
+
+		string TargetAccount;
+		float TargetBalanceBefore;
+		float TargetBalanceAfter;
 	};
 
 	enum EnStatus { FailedWriteToFile, UserNotFound, FileNotFound, FileExist, UserExist, Success};
@@ -52,6 +69,8 @@ public:
 
 	EnStatus SaveLog();
 
+	EnStatus SaveTransferLog(clsClint SourceClint, clsClint TargetClint, float TransferAmount);
+
 	bool HasPermission(EnPermissions Choice);
 
 	static void SetDataFilePath(const string& FilePath);
@@ -61,6 +80,8 @@ public:
 	static EnStatus GetFileStatus();
 
 	static  EnStatus GetLog(vector<StLog>& vLog, string Separator = "#//#");
+
+	static  EnStatus GetTransferLog(vector<StTransferLog>& vTransferLog, string Separator = "#//#");
 
 private:
 
@@ -72,9 +93,6 @@ private:
 	string Password;
 	int Permissions;
 
-
-
-
 	string UserDataToRecord(clsUser User, string Separator = "#//#");
 
 	EnStatus WriteToFile(vector<clsUser> vUsers);
@@ -83,6 +101,8 @@ private:
 
 	string GetLogRecord(string Separator = "#//#");
 
+	string GetTransferLogRecord(clsClint SourceClint, clsClint TargetClint, float TransferAmount, string Separator = "#//#");
+
 	static clsUser FindUser(const string& UserName);
 
 	static clsUser RecordToUserObject(string String, string Separator = "#//#");
@@ -90,5 +110,7 @@ private:
 	static clsUser GetEmptyUser(const string& UserName);
 
 	static StLog LogRecordToStruct(string LogRecord, string Separator = "#//#");
+
+	static StTransferLog TransferLogRecordToStruct(string LogRecord, string Separator = "#//#");
 
 };

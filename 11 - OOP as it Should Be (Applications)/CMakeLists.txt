@@ -37,6 +37,9 @@ set(SOURCE_FILES
     ${CMAKE_SOURCE_DIR}/Include/clsClint.h
     ${CMAKE_SOURCE_DIR}/Source/clsClint.cpp
 
+    ${CMAKE_SOURCE_DIR}/Include/clsCurrency.h
+    ${CMAKE_SOURCE_DIR}/Source/clsCurrency.cpp
+
     # screen files
     ${CMAKE_SOURCE_DIR}/Include/clsScreen.h
     ${CMAKE_SOURCE_DIR}/Source/clsScreen.cpp
@@ -63,7 +66,10 @@ set(SOURCE_FILES
     ${CMAKE_SOURCE_DIR}/Include/clsLogScreen.h
     ${CMAKE_SOURCE_DIR}/Source/clsLogScreen.cpp
 
+    ${CMAKE_SOURCE_DIR}/Include/clsCurrencyExchangeScreen.h
+    ${CMAKE_SOURCE_DIR}/Source/clsCurrencyExchangeScreen.cpp
 
+    
     # transaction screen
     ${CMAKE_SOURCE_DIR}/Include/clsTransactionMenuScreen.h
     ${CMAKE_SOURCE_DIR}/Source/clsTransactionMenuScreen.cpp
@@ -74,6 +80,13 @@ set(SOURCE_FILES
     ${CMAKE_SOURCE_DIR}/Include/clsWithdrawScreen.h
     ${CMAKE_SOURCE_DIR}/Source/clsWithdrawScreen.cpp
 
+    ${CMAKE_SOURCE_DIR}/Include/clsTransferScreen.h
+    ${CMAKE_SOURCE_DIR}/Source/clsTransferScreen.cpp
+
+    ${CMAKE_SOURCE_DIR}/Include/clsTransferLogScreen.h
+    ${CMAKE_SOURCE_DIR}/Source/clsTransferLogScreen.cpp
+
+    
     # manage users screen
     ${CMAKE_SOURCE_DIR}/Include/clsManageUsersScreen.h
     ${CMAKE_SOURCE_DIR}/Source/clsManageUsersScreen.cpp
@@ -88,8 +101,21 @@ set(SOURCE_FILES
     ${CMAKE_SOURCE_DIR}/Source/clsDeleteUserScreen.cpp    
 
     ${CMAKE_SOURCE_DIR}/Include/clsUpdateUserScreen.h
-    ${CMAKE_SOURCE_DIR}/Source/clsUpdateUserScreen.cpp    
+    ${CMAKE_SOURCE_DIR}/Source/clsUpdateUserScreen.cpp
 
+    # Currency Exchange Screen
+
+    ${CMAKE_SOURCE_DIR}/Include/clsListCurrenciesScreen.h
+    ${CMAKE_SOURCE_DIR}/Source/clsListCurrenciesScreen.cpp
+
+    ${CMAKE_SOURCE_DIR}/Include/clsFindCurrencyScreen.h
+    ${CMAKE_SOURCE_DIR}/Source/clsFindCurrencyScreen.cpp
+
+    ${CMAKE_SOURCE_DIR}/Include/clsUpdateCurrencyRateScreen.h
+    ${CMAKE_SOURCE_DIR}/Source/clsUpdateCurrencyRateScreen.cpp
+    
+    ${CMAKE_SOURCE_DIR}/Include/clsCurrencyCalculatorScreen.h
+    ${CMAKE_SOURCE_DIR}/Source/clsCurrencyCalculatorScreen.cpp
 )
 
 # Add the executable target

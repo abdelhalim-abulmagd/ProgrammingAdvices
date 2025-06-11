@@ -11,7 +11,7 @@ public:
 	static void Show();
 
 private:
-	enum EnMenuChoices { ShowListClints = 1, Add, Delete, Update, Transaction, ManageUsers, Log, Logout };
+	enum EnMenuChoices { ShowListClints = 1, Add, Delete, Update, Transaction, ManageUsers, Log, CurrencyExchange, Logout };
 
 	static void PerformMenuChoice(EnMenuChoices Choice);
 

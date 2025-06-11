@@ -15,7 +15,7 @@ public:
 	clsClint(const string& AcountNumber);
 
 	clsClint(const string& FirstName, const string& LastName, const string& Phone, const string& Email,
-		const string& AcountNumber, const string& PinCode, const float& Salary, EnStatus ClintStatus);
+		const string& AcountNumber, const string& PinCode, const float& CurrentBalance, EnStatus ClintStatus);
 
 	virtual ~clsClint();
 
@@ -24,8 +24,10 @@ public:
 	string GetPinCode();
 	void SetPinCode(const string& PinCode);
 
-	float GetSalary();
-	void SetSalary(const float& Salary);
+	float GetCurrentBalance();
+	void SetCurrentBalance(const float& Balance);
+
+	float GetOldBalance();
 
 	EnStatus GetClintStatus();
 
@@ -37,9 +39,9 @@ public:
 
 	EnStatus AddToFile();
 
-	EnStatus Deposit(int DepositAmount);
+	EnStatus Deposit(float DepositAmount);
 
-	EnStatus Withdraw(int WithdrawAmount);
+	EnStatus Withdraw(float WithdrawAmount);
 
 	static EnStatus ReadFromFile(vector<clsClint>& vClints);
 
@@ -51,7 +53,9 @@ private:
 
 	string AcountNumber;
 	string PinCode;
-	float Salary;
+
+	float CurrentBalance;
+	float OldBalance;
 
 	void SetClintStatus(EnStatus ClintStatus);
 

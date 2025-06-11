@@ -76,7 +76,9 @@ clsClint clsClint::RecordToClintObject(string Record, string Separator)
 
 	Clint.AcountNumber = SparatedString[4];
 	Clint.PinCode = SparatedString[5];
-	Clint.Salary = stof(SparatedString[6]);
+
+	Clint.CurrentBalance = stof(SparatedString[6]);
+	Clint.OldBalance = stof(SparatedString[7]);
 
 	Clint.SetClintStatus(ClintExist);
 
@@ -85,7 +87,7 @@ clsClint clsClint::RecordToClintObject(string Record, string Separator)
 
 clsClint clsClint::GetEmptyClint(const string& AccountNumber)
 {
-	clsClint EmptyClint = clsClint("", "", "", "", AccountNumber, "", NULL, ClintNotFound);
+	clsClint EmptyClint = clsClint("", "", "", "", AccountNumber, "", 0, ClintNotFound);
 	return EmptyClint;
 }
 
@@ -100,10 +102,12 @@ clsClint::clsClint(const string& AcountNumber) : clsPerson("", "", "", "")
 }
 
 clsClint::clsClint(const string& FirstName, const string& LastName, const string& Phone, const string& Email,
-	const string& AcountNumber, const string& PinCode, const float& Salary, EnStatus ClintStatus)
+	const string& AcountNumber, const string& PinCode, const float& CurrentBalance, EnStatus ClintStatus)
 
 	: clsPerson(FirstName, LastName, Phone, Email),
-	AcountNumber(AcountNumber), PinCode(PinCode), Salary(Salary), ClintStatus(ClintStatus) { }
+	AcountNumber(AcountNumber), PinCode(PinCode), CurrentBalance(CurrentBalance), ClintStatus(ClintStatus),
+	OldBalance(0)
+{ }
 
 clsClint::~clsClint() { }
 
@@ -112,8 +116,14 @@ string clsClint::GetAcountNumber()							{ return AcountNumber; }
 string clsClint::GetPinCode()								{ return PinCode; }
 void clsClint::SetPinCode(const string& PinCode)			{ this->PinCode = PinCode; }
 
-float clsClint::GetSalary()									{ return Salary; }
-void clsClint::SetSalary(const float& Salary)				{ this->Salary = Salary; }
+float clsClint::GetCurrentBalance()							{ return CurrentBalance; }
+void clsClint::SetCurrentBalance(const float& Balance)
+{ 
+	OldBalance = this->CurrentBalance;
+	this->CurrentBalance = Balance;
+}
+
+float clsClint::GetOldBalance()								{ return OldBalance; }
 
 clsClint::EnStatus clsClint::GetClintStatus()				{ return ClintStatus; }
 
@@ -167,16 +177,19 @@ clsClint::EnStatus clsClint::AddToFile()
 	return Success;
 }
 
-clsClint::EnStatus clsClint::Deposit(int DepositAmount)
+clsClint::EnStatus clsClint::Deposit(float DepositAmount)
 {
-	Salary += DepositAmount;
+	float NewBalance = CurrentBalance + DepositAmount;
+
+	SetCurrentBalance(NewBalance);
+
 	clsClint::EnStatus Status = Update();
 	return Status;
 }
 
-clsClint::EnStatus clsClint::Withdraw(int WithdrawAmount)
+clsClint::EnStatus clsClint::Withdraw(float WithdrawAmount)
 {
-	if (WithdrawAmount > Salary)
+	if (WithdrawAmount > CurrentBalance)
 		return InvalidAmount;
 	
 	return Deposit(-WithdrawAmount);
@@ -195,7 +208,7 @@ clsClint::EnStatus clsClint::WriteToFile(vector<clsClint> vClints)
 	File.open(DataFilePath, ios::out);
 
 	if (!File.is_open())
-		return FailedWriteToFile;
+		return FailedWriteToFile; 
 
 	for (clsClint Clint : vClints)
 		File << ClintDataToRecord(Clint) + '\n';
@@ -214,10 +227,11 @@ string clsClint::ClintDataToRecord(clsClint Clint, string Separator)
 	Record += Clint.GetEmail() + Separator;
 	Record += Clint.GetPhone() + Separator;
 
-	Record += Clint.GetAcountNumber() + Separator;
-	Record += Clint.GetPinCode() + Separator;
-	Record += to_string(Clint.GetSalary());
-
+	Record += Clint.AcountNumber + Separator;
+	Record += Clint.PinCode + Separator;
+	
+	Record += to_string(Clint.CurrentBalance) + Separator;
+	Record += to_string(Clint.OldBalance);
 
 	return Record;
 }

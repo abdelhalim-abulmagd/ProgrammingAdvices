@@ -1,22 +1,2 @@
-﻿  Global.cpp
-  clsAddClintScreen.cpp
-  clsAddUserScreen.cpp
-  clsClintMainScreen.cpp
-  clsDeleteClintScreen.cpp
-  clsDeleteUserScreen.cpp
-  clsDepositScreen.cpp
-  clsListClintScreen.cpp
-  clsListUserScreen.cpp
-  clsLogScreen.cpp
-  clsLoginScreen.cpp
-  clsManageUsersScreen.cpp
-  clsScreen.cpp
-  clsTransactionMenuScreen.cpp
-D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Source\clsTransactionMenuScreen.cpp(22,20): warning C4129: 'T': unrecognized character escape sequence
-  clsUpdateClintScreen.cpp
-  clsUpdateUserScreen.cpp
-  clsUser.cpp
-  clsWithdrawScreen.cpp
-  main.cpp
-  Generating Code...
+﻿  main.cpp
   BankSystem.vcxproj -> D:\study\ProgrammingAdvices\11 - OOP as it Should Be (Applications)\Build\Release\BankSystem.exe

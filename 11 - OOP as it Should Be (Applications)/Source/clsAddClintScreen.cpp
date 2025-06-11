@@ -66,7 +66,7 @@ clsClint clsAddClintScreen::ReadClintInfo(clsClint Clint)
 	Clint.SetPhone(clsInput::ReadString("Phone : "));
 
 	Clint.SetPinCode(clsInput::ReadString("Pin Code : "));
-	Clint.SetSalary(clsInput::ReadNumber("Salary : ", clsInput::Positive));
+	Clint.SetCurrentBalance(clsInput::ReadNumber("Balance : ", clsInput::Positive));
 
 	return Clint;
 }

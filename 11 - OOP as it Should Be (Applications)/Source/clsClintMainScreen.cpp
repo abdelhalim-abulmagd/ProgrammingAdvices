@@ -7,7 +7,11 @@
 #include "clsUpdateClintScreen.h"
 #include "clsTransactionMenuScreen.h"
 #include "clsManageUsersScreen.h"
+#include "clsCurrencyExchangeScreen.h"
+
 #include "clsLogScreen.h"
+
+
 
 #include "clsLoginScreen.h"
 #include "Global.h"
@@ -37,6 +41,7 @@ void clsClintMainScreen::Show()
 		"Transactions",
 		"Manage Users",
 		"Log",
+		"Currency Exchange",
 		"Logout"
 	};
 
@@ -44,7 +49,7 @@ void clsClintMainScreen::Show()
 
 	clsScreen::Line(55);
 
-	EnMenuChoices Choice = static_cast<EnMenuChoices>(clsInput::ReadNumber("Chose From [1, 8] : ", 1, 8));
+	EnMenuChoices Choice = static_cast<EnMenuChoices>(clsInput::ReadNumber("Chose From [1, 9] : ", 1, 9));
 
 	PerformMenuChoice(Choice);
 }
@@ -81,11 +86,17 @@ void clsClintMainScreen::PerformMenuChoice(EnMenuChoices Choice)
 	case Log:
 		clsLogScreen::Show();
 		break;
+	case CurrencyExchange:
+		clsCurrencyExchangeScreen::Show();
+		break;
+
 	case Logout:
 		*Global::CurrentUser = clsUser("");
 		clsLoginScreen::Show();
 		break;
 	}
+
+
 	BackToMainScreen();
 }
 

@@ -1,6 +1,8 @@
+
 #include "clsUser.h"
 #include "clsString.h"
 #include "clsDate.h"
+
 
 #include <fstream>
 
@@ -10,6 +12,7 @@
 //------------------------------
 static string DataFilePath = "../Data/Users.txt";
 static string LogFilePath = "../Data/Log.txt";
+static string TransferLogFilePath = "../Data/TransferLog.txt";
 
 
 //------------------------------
@@ -118,6 +121,21 @@ clsUser::EnStatus clsUser::SaveLog()
 	return Success;
 }
 
+clsUser::EnStatus clsUser::SaveTransferLog(clsClint SourceClint, clsClint TargetClint, float TransferAmount)
+{
+	fstream File;
+	File.open(TransferLogFilePath, ios::out | ios::app);
+
+	if (!File.is_open())
+		return FailedWriteToFile;
+
+	File << GetTransferLogRecord(SourceClint,  TargetClint, TransferAmount) << '\n';
+
+	File.close();
+
+	return Success;
+}
+
 //------------------------------
 // Private Methods
 //------------------------------
@@ -132,7 +150,7 @@ string clsUser::UserDataToRecord(clsUser User, string Separator)
 	Record += User.GetPhone() + Separator;
 
 	Record += User.GetUserName() + Separator;
-	Record += User.GetPassword() + Separator;
+	Record += clsString::Encrypt(User.GetPassword()) + Separator;
 	Record += to_string(User.GetPermissions());
 
 	return Record;
@@ -178,8 +196,31 @@ string clsUser::GetLogRecord(string Separator)
 
 	LogMessage += CurrentDate + " - " + CurrentTime + Separator;
 	LogMessage += UserName + Separator;
-	LogMessage += Password + Separator;
+	LogMessage += clsString::Encrypt(Password) + Separator;
 	LogMessage += to_string(Permissions) + '\n';
+	
+	return LogMessage;
+}
+
+string clsUser::GetTransferLogRecord(clsClint SourceClint, clsClint TargetClint, float TransferAmount, string Separator)
+{
+	string CurrentDate = clsDate::FormatDate(clsDate::GetCurrentDate());
+	string CurrentTime = clsDate::FormatDate(clsDate::GetCurrentTime(), "dd:mm:yyyy");
+
+	string LogMessage;
+
+	LogMessage += CurrentDate + " - " + CurrentTime + Separator;
+
+	LogMessage += UserName + Separator;
+	LogMessage += to_string(TransferAmount) + Separator;
+
+	LogMessage += SourceClint.GetAcountNumber() + Separator;
+	LogMessage += to_string(SourceClint.GetOldBalance()) + Separator;
+	LogMessage += to_string(SourceClint.GetCurrentBalance()) + Separator;
+
+	LogMessage += TargetClint.GetAcountNumber() + Separator;
+	LogMessage += to_string(TargetClint.GetOldBalance()) + Separator;
+	LogMessage += to_string(TargetClint.GetCurrentBalance());
 
 	return LogMessage;
 }
@@ -238,6 +279,25 @@ clsUser::EnStatus clsUser::GetLog(vector<StLog>& vLog, string Separator)
 	return FileExist;
 }
 
+clsUser::EnStatus clsUser::GetTransferLog(vector<StTransferLog>& vTransferLog, string Separator)
+{
+
+	fstream File;
+	File.open(TransferLogFilePath, ios::in);
+
+	if (!File.is_open())
+		return FileNotFound;
+
+	string Line;
+
+	while (getline(File, Line))
+		vTransferLog.push_back(TransferLogRecordToStruct(Line));
+
+	File.close();
+
+	return FileExist;
+}
+
 //------------------------------
 // Private Static Methods
 //------------------------------
@@ -271,7 +331,7 @@ clsUser clsUser::RecordToUserObject(string Record, string Separator)
 	User.SetPhone(SparatedString[3]);
 
 	User.UserName = SparatedString[4];
-	User.Password = SparatedString[5];
+	User.Password = clsString::Decript(SparatedString[5]);
 	User.Permissions = stof(SparatedString[6]);
 
 	User.UserStatus = UserExist;
@@ -289,5 +349,12 @@ clsUser::StLog clsUser::LogRecordToStruct(string LogRecord, string Separator)
 {
 	vector<string> vLog = clsString::Split(LogRecord, Separator);
 
-	return StLog{ vLog[0], vLog[1], vLog[2], stoi(vLog[3]) };
+	return StLog{ vLog[0], vLog[1], clsString::Decript(vLog[2]), stoi(vLog[3]) };
+}
+
+clsUser::StTransferLog clsUser::TransferLogRecordToStruct(string LogRecord, string Separator)
+{
+	vector<string> vLog = clsString::Split(LogRecord, Separator);
+
+	return StTransferLog{ vLog[0], vLog[1], stof(vLog[2]), vLog[3], stof(vLog[4]),stof(vLog[5]) ,vLog[6], stof(vLog[7]), stof(vLog[8]) };
 }
