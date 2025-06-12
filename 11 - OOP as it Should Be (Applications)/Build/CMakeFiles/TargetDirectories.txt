@@ -1,3 +1,0 @@
-D:/study/ProgrammingAdvices/11 - OOP as it Should Be (Applications)/Build/CMakeFiles/BankSystem.dir
-D:/study/ProgrammingAdvices/11 - OOP as it Should Be (Applications)/Build/CMakeFiles/ALL_BUILD.dir
-D:/study/ProgrammingAdvices/11 - OOP as it Should Be (Applications)/Build/CMakeFiles/ZERO_CHECK.dir
